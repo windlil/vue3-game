@@ -7,24 +7,10 @@ import { computed } from 'vue';
 const STEP = 50
 
 const playerStore = usePlayerStore()
+const { controlPlayer } = playerStore
 const { player } = storeToRefs(playerStore)
 
-function controlPlayer(target: 'left' | 'right' | 'up' | 'down') {
-  switch(target) {
-    case 'left':
-      player.value.x -= 1
-      break;
-    case 'right':
-      player.value.x += 1
-      break;
-    case 'up':
-      player.value.y -= 1
-      break;
-    case 'down':
-      player.value.y += 1
-      break;
-  }
-}
+
 
 window.addEventListener('keyup', (e: KeyboardEvent) => {
   const code = e.code
