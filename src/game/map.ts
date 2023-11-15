@@ -1,7 +1,4 @@
-import { Cargo } from "./Cargo"
-import { Empty } from "./Empty"
-import { Floor } from "./Floor"
-import { Wall } from "./Wall"
+import { Empty, Wall, Floor, Cargo } from './element/index'
 
 
 // [Wall{}, Empty{}, Floor{}]
