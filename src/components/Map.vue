@@ -1,19 +1,11 @@
 <script setup lang="ts">
-import { initMap } from '../game/map'
+import { useMapStore } from '../store/modules/map'
 import Floor from './Floor.vue'
 import Empty from './Empty.vue'
 import Cargo from './Cargo.vue'
 import Wall from './Wall.vue';
 
-const map = initMap([
-  [0, 1, 1, 1, 1, 1, 1, 0],
-  [0, 1, 2, 2, 2, 2, 1, 0],
-  [0, 1, 2, 2, 2, 2, 1, 0],
-  [0, 1, 2, 2, 3, 2, 1, 0],
-  [0, 1, 2, 2, 2, 2, 1, 0],
-  [0, 1, 2, 2, 2, 2, 1, 0],
-  [0, 1, 1, 1, 1, 1, 1, 0],
-])
+const { map } = useMapStore()
 
 const elementMap: any = {
   Floor: Floor,
@@ -21,8 +13,6 @@ const elementMap: any = {
   Empty: Empty,
   Cargo: Cargo
 }
-
-console.log(map)
 
 function getElement(ele: any) {
   return elementMap[ele.name]
@@ -44,4 +34,4 @@ function getElement(ele: any) {
 .row {
   display: flex;
 }
-</style>../game/map
+</style>
